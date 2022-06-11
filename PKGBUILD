@@ -1,9 +1,8 @@
-# Maintainer: foo <foo(at)example(dot)org>
-# Contributor: bar <bar(at)example(dot)org>
+# Maintainer: Nicolai Weitkemper <kontakt@nicolaiweitkemper.de>
 
 _pkgbase=hid-magicmouse
 pkgname=hid-magicmouse-dkms
-pkgver=1
+pkgver=20220611.45932fd
 pkgrel=1
 pkgdesc="Add support to change click pressure and feedback for Magic Trackpad 2 (DKMS)"
 arch=('i686' 'x86_64')
@@ -32,5 +31,5 @@ package() {
       -i "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/dkms.conf
 
   # Copy sources (including Makefile)
-  cp -r * "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/
+  cp -r linux/drivers/hid/* "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/
 }
